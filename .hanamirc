@@ -1,0 +1,3 @@
+project=koala
+test=rspec
+template=erb
