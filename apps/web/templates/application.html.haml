@@ -1,0 +1,18 @@
+!!!
+%html.h-100{lang: 'en'}
+  %head
+    %meta{charset: 'utf-8'}
+    %title= page_title
+    %meta{name: 'viewport', content: 'width=device-width, initial-scale=1.0'}
+    = favicon
+    = stylesheet 'bootstrap.min'
+    = stylesheet 'application'
+  %body.d-flex.flex-column.h-100
+    = render partial: 'shared/header'
+    %main.flex-shrink-0{role: 'main'}
+      .container= yield
+    = render partial: 'shared/sidebar'
+    = render partial: 'shared/footer'
+  = javascript 'jquery-3.4.1.slim'
+  = javascript 'popper'
+  = javascript 'bootstrap'

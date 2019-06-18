@@ -1,3 +1,4 @@
+#:nocov:
 module RSpec
   module FeatureExampleGroup
     def self.included(group)

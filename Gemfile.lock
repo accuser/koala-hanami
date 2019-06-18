@@ -21,6 +21,7 @@ GEM
     concurrent-ruby (1.1.5)
     debug_inspector (0.0.3)
     diff-lcs (1.3)
+    docile (1.3.2)
     dotenv (2.7.2)
     dry-configurable (0.8.3)
       concurrent-ruby (~> 1.0)
@@ -58,6 +59,9 @@ GEM
       dry-logic (~> 0.4, >= 0.4.0)
       dry-types (~> 0.11.0)
     erubi (1.8.0)
+    haml (5.1.1)
+      temple (>= 0.8.0)
+      tilt
     hanami (1.3.1)
       bundler (>= 1.6, < 3)
       concurrent-ruby (~> 1.0)
@@ -116,13 +120,13 @@ GEM
       url_mount (~> 0.2.1)
     ice_nine (0.11.2)
     inflecto (0.0.2)
+    json (2.2.0)
     mail (2.7.1)
       mini_mime (>= 0.1.1)
     mini_mime (1.0.1)
     mini_portile2 (2.4.0)
     nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
-    pg (1.1.4)
     public_suffix (3.1.0)
     puma (3.12.1)
     rack (2.0.7)
@@ -168,6 +172,13 @@ GEM
     sequel (4.49.0)
     shotgun (0.9.2)
       rack (>= 1.0)
+    simplecov (0.16.1)
+      docile (~> 1.1)
+      json (>= 1.8, < 3)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.2)
+    sqlite3 (1.4.1)
+    temple (0.8.1)
     tilt (2.0.9)
     transproc (1.0.3)
     url_mount (0.2.1)
@@ -181,14 +192,16 @@ PLATFORMS
 DEPENDENCIES
   capybara
   dotenv (~> 2.4)
+  haml
   hanami (~> 1.3)
   hanami-model (~> 1.3)
   hanami-webconsole
-  pg
   puma
   rake
   rspec
   shotgun
+  simplecov
+  sqlite3
 
 RUBY VERSION
    ruby 2.5.3p105
