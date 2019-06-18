@@ -1,0 +1,15 @@
+<%=
+  form_for :profile, routes.profile_path, class: 'form-profile-new', values: {profile: profile} do
+    div class: 'form_row' do
+      h1 Account Details, class: 'h3 mb-3 font-weight-normal'
+    end
+    div class: 'form-label-group' do
+      email_field :email, class: 'form-control', required: '', autofocus: '', disabled: ''
+      label 'Email address', for: :email
+    end
+    div class: 'form-label-group' do
+      password_field :password, class: 'form-control', required: '', disabled: ''
+      label 'Password', for: :password
+    end
+  end
+%>
