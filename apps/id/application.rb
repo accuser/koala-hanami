@@ -1,8 +1,7 @@
-#:nocov:
 require 'hanami/helpers'
 require 'hanami/assets'
 
-module Web
+module Id
   class Application < Hanami::Application
     configure do
       ##
@@ -104,7 +103,7 @@ module Web
 
       # The layout to be used by all views
       #
-      layout :application # It will load Web::Views::ApplicationLayout
+      layout :application # It will load Id::Views::ApplicationLayout
 
       # The relative path to templates
       #
@@ -242,7 +241,7 @@ module Web
       # FRAMEWORKS
       #
 
-      # Configure the code that will yield each time Web::Action is included
+      # Configure the code that will yield each time Id::Action is included
       # This is useful for sharing common functionality
       #
       # See: http://www.rubydoc.info/gems/hanami-controller#Configuration
@@ -250,13 +249,13 @@ module Web
         include Koala::Policies
       end
 
-      # Configure the code that will yield each time Web::View is included
+      # Configure the code that will yield each time Id::View is included
       # This is useful for sharing common functionality
       #
       # See: http://www.rubydoc.info/gems/hanami-view#Configuration
       view.prepare do
         include Hanami::Helpers
-        include Web::Assets::Helpers
+        include Id::Assets::Helpers
         include Koala::Helpers
       end
     end
