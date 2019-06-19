@@ -1,0 +1,10 @@
+<%=
+  form_for :credentials, routes.session_path, class: 'form-signin', values: {credentials: credentials} do
+    h1 form_title, class: 'h3 mb-3 font-weight-normal'
+    label 'Email address', for: :email, class: 'sr-only'
+    email_field :email, class: 'form-control', required: true, autofocus: true
+    label 'Password', for: :password, class: 'sr-only'
+    password_field :password, class: 'form-control', required: true
+    submit 'Sign in', class: 'btn btn-primary btn-block'
+  end
+%>

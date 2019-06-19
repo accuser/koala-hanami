@@ -4,8 +4,10 @@ require 'hanami/setup'
 require 'hanami/model'
 require_relative '../lib/koala'
 require_relative '../apps/web/application'
+require_relative '../apps/id/application'
 
 Hanami.configure do
+  mount Id::Application, at: '/session'
   mount Web::Application, at: '/'
 
   model do

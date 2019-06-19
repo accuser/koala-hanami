@@ -1,0 +1,12 @@
+!!!
+%html.h-100{lang: 'en'}
+  %head
+    %meta{charset: 'utf-8'}
+    %title= page_title
+    %meta{name: 'viewport', content: 'width=device-width, initial-scale=1.0'}
+    = favicon
+    = stylesheet 'bootstrap.min'
+    = stylesheet 'application'
+  %body.text-center= yield
+  = javascript 'jquery-3.4.1.slim'
+  = javascript 'bootstrap.bundle'

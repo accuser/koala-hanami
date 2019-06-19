@@ -8,7 +8,7 @@
         <%= link_to_sign_in class: "btn btn-primary" %>
       </nav>
     <% else %>
-      <%= render partial: 'session/destroy' %>
+      <%= link_to_sign_out class: "btn btn-primary" %>
     <% end %>
   </div>
 </header>

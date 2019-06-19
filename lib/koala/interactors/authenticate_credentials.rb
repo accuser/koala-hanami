@@ -27,7 +27,7 @@ class AuthenticateCredentials
   end
 
   def valid?(params)
-    result = Credentials.new(params).validate
+    result = CredentialsValidation.new(params).validate
 
     if result.failure?
       error result.errors

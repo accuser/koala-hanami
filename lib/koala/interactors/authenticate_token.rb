@@ -24,7 +24,7 @@ class AuthenticateToken
   end
 
   def valid?(params)
-    result = Token.new(params).validate
+    result = TokenValidation.new(params).validate
 
     if result.failure?
       error result.errors

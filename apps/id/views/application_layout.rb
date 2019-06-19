@@ -1,7 +1,7 @@
-module Web
+module Id
   module Views
     class ApplicationLayout
-      include Web::Layout
+      include Id::Layout
     end
   end
 end
