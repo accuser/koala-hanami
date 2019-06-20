@@ -8,7 +8,7 @@ RSpec.describe Web::Controllers::Users::Show, type: :action do
       allow(action).to receive(:current_user) { nil }
     }
 
-    it "fails with HTTP 401 Unauthorized" do
+    it "#call fails with HTTP 401 Unauthorized" do
       status, headers, body = action.call(params)
       expect(status).to eq 401
     end
