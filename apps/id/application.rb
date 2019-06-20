@@ -1,3 +1,4 @@
+#:nocov:
 require 'hanami/helpers'
 require 'hanami/assets'
 
