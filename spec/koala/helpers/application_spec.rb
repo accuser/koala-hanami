@@ -2,6 +2,8 @@ RSpec.describe Koala::Helpers::Application, type: :helper do
   let(:layout)   { Web::Views::ApplicationLayout.new({ format: :html }, 'contents') }
   let(:rendered) { layout.render }
 
+  it_behaves_like "a view helper"
+
   context "#company_name" do
     it "returns the company's name" do
       expect(layout.company_name).to eq 'Southwest Koala'

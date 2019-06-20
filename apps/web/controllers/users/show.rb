@@ -4,14 +4,9 @@ module Web
       class Show
         include Web::Action
 
-        attr_reader :user_repository
-
-        def initialize(deps = {})
-          @user_repository = deps[:user_repository] || UserRepository.new
-        end
-
         before {
-          unauthorized! unless authenticated?
+          authenticated!
+          valid!
         }
 
         params do
@@ -31,9 +26,13 @@ module Web
             @user = user
           end
         end
+      
+        private # impl
+        
+        attr_reader :user_repository
 
-        def valid?(params)
-          params.valid?
+        def initialize(deps = {})
+          @user_repository = deps[:user_repository] || UserRepository.new
         end
       end
     end

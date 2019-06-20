@@ -4,14 +4,9 @@ module Id
       class Create
         include Id::Action
 
-        attr_reader :authenticate_credentials
-
-        def initialize(deps = {})
-          @authenticate_credentials = deps[:authenticate_credentials] || AuthenticateCredentials.new
-        end
-
         before {
-          self.current_user = nil
+          anonymous!
+          valid!
         }
 
         params do
@@ -30,11 +25,14 @@ module Id
             redirect_to Web.routes.root_url
           end
         end
+      
+        private # impl
         
-        def valid?(params)
-          result = CredentialsValidation.new(params).validate
-          result.success?
-	      end
+        attr_reader :authenticate_credentials
+
+        def initialize(deps = {})
+          @authenticate_credentials = deps[:authenticate_credentials] || AuthenticateCredentials.new
+        end
       end
     end
   end

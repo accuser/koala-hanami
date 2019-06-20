@@ -2,6 +2,8 @@ RSpec.describe Id::Controllers::Session::Create, type: :action do
   let(:interactor)  { double("AuthenticateCredentials") }
   let(:action)      { described_class.new(authenticate_credentials: interactor) }
 
+  it_behaves_like "an anonymous action"
+  
   context "#call" do
     let(:credentials) { Hash[email: 'alice@example.com', password: 'secret'] }
     let(:params)      { Hash[credentials: credentials] }

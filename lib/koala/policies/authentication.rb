@@ -9,9 +9,17 @@ module Koala
         end
       end
 
+      def anonymous!
+        forbidden! unless anonymous?
+      end
+
       # +true+ if the current user is anonymous
       def anonymous?
         current_user.nil?
+      end
+
+      def authenticated!
+        unauthorized! unless authenticated?
       end
 
       # +true+ if the current user is authenticated
