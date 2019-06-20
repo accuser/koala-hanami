@@ -20,30 +20,6 @@ module Koala
       def link_to_company(options = {})
         link_to company_name, company_url, options
       end
-
-      def link_to_site(options = {})
-        link_to site_name, site_path, options
-      end
-
-      def page_title
-        site_title
-      end
-
-      def site_name
-        "Koala"
-      end
-
-      def site_path
-        Web.routes.root_path
-      end
-
-      def site_url
-        Web.routes.root_url
-      end
-
-      def site_title
-        site_name
-      end
     end
   end
 end

@@ -3,17 +3,17 @@ require 'hanami/interactor'
 class AuthenticateToken
   include Hanami::Interactor
 
-  attr_reader :user_repository
-
-  def initialize(user_repository: UserRepository.new)
-    @user_repository = user_repository
-  end
-
   expose :user
 
   def call(params)
     token = params.fetch(:token)
 
+    authenticate_token(token)
+  end
+
+  private
+
+  def authenticate_token(token)
     user = user_repository.user_with_token(token)
 
     if user.nil?
@@ -21,6 +21,14 @@ class AuthenticateToken
     else
       @user = user
     end
+  end
+
+  private # impl
+
+  attr_reader :user_repository
+
+  def initialize(user_repository: UserRepository.new)
+    @user_repository = user_repository
   end
 
   def valid?(params)

@@ -5,7 +5,8 @@ module Id
         include Id::Action
 
         before {
-          self.current_user = nil
+          anonymous!
+          valid!
         }
 
         params do
@@ -16,11 +17,6 @@ module Id
 
         def call(params)
           @credentials = params.get(:credentials)
-        end
- 
-        def valid?(params)
-          result = CredentialsValidation.new(params).validate
-          result.success?
         end
       end
     end

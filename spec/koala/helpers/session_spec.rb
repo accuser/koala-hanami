@@ -2,6 +2,8 @@ RSpec.describe Koala::Helpers::Session, type: :helper do
   let(:layout)   { Web::Views::ApplicationLayout.new({ format: :html }, 'contents') }
   let(:rendered) { layout.render }
 
+  it_behaves_like "a view helper"
+  
   context "#link_to_sign_in" do
     it "returns a formatted link for signing in" do
       expect(layout.link_to_sign_in.to_s).to eq '<a href="/session/new">Sign in</a>'
